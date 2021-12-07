@@ -69,5 +69,6 @@ class Wall:
     # Draws the faces
     def draw(self):
         # A compléter en remplaçant pass par votre code
-        pass
+        for t in self.objects :
+            t.draw()
   
