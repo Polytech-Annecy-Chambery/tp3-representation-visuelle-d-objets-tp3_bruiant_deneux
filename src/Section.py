@@ -86,15 +86,14 @@ class Section:
         # A compléter en remplaçant pass par votre code
 
         gl.glPolygonMode(gl.GL_FRONT_AND_BACK, gl.GL_LINE)
-        gl.glBegin(gl.GL_QUADS)
-        gl.glColor3fv([0.01,0.01,0.01])
+
         for i in range (len(self.faces)):
             gl.glBegin(gl.GL_QUADS)
             gl.glColor3fv([0.01,0.01,0.01])
             for edges in self.faces[i]:
                 gl.glVertex3fv(self.vertices[edges])
                
-        gl.glEnd()
+            gl.glEnd()
      
                     
     # Draws the faces

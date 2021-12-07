@@ -32,7 +32,7 @@ class Wall:
         if 'thickness' not in self.parameters:
             self.parameters['thickness'] = 0.2    
         if 'color' not in self.parameters:
-            self.parameters['color'] = [0.5, 0.5, 0.5]       
+            self.parameters['color'] = [0.5, 0.5, 0.5]             
             
         # Objects list
         self.objects = []
@@ -42,7 +42,7 @@ class Wall:
                                       'height': self.parameters['height'], \
                                       'thickness': self.parameters['thickness'], \
                                       'color': self.parameters['color'],
-                                      'position': self.parameters['position']})
+                                      'edges':True})
         self.objects.append(self.parentSection) 
         
     # Getter
@@ -69,6 +69,10 @@ class Wall:
     # Draws the faces
     def draw(self):
         # A compléter en remplaçant pass par votre code
+        gl.glPushMatrix()
+        gl.glTranslatef(self.parameters['position'][0], self.parameters['position'][1], self.parameters['position'][2])
+        gl.glRotatef(self.parameters['orientation'] , 0, 0, 1)
+        
         for t in self.objects :
             t.draw()
-  
+        gl.glPopMatrix()

@@ -38,15 +38,15 @@ def Q2c():
 
 def Q3a():
     return Configuration().add(
-            Wall({'position': [1, 1, 0], 'width':7, 'height':2.6, 'thickness':0.2, 'edges': True})
+            Wall({'position': [1, 1, 0], 'width':7, 'height':2.6, 'thickness':0.2, 'edges': True,'orientation': 45})
             )  
 
 def Q4a():
     # Ecriture en utilisant des variables : A compléter
-    wall1 = Wall(...)
-    wall2 = Wall(...)
-    wall3 = Wall(...)
-    wall4 = Wall(...)  
+    wall1 = Wall({'position': [0, 0, 0], 'width':7, 'height':2.6, 'thickness':0.2, 'edges': True,'orientation': 0})
+    wall2 = Wall({'position': [0.2, 0.2, 0], 'width':4, 'height':2.6, 'thickness':0.2, 'edges': True,'orientation': 90})
+    wall3 = Wall({'position': [0, 4, 0], 'width':7, 'height':2.6, 'thickness':0.2, 'edges': True,'orientation': 0})
+    wall4 = Wall({'position': [7, 0.2, 0], 'width':4, 'height':2.6, 'thickness':0.2, 'edges': True,'orientation': 90})  
     house = House({'position': [-3, 1, 0], 'orientation':0})
     house.add(wall1).add(wall3).add(wall4).add(wall2)
     return Configuration().add(house)   
@@ -100,8 +100,8 @@ def main():
     # configuration = Q1b_f()
     # configuration = Q2b()
     # configuration = Q2c()
-    configuration = Q3a()
-    # configuration = Q4a()
+    # configuration = Q3a()
+    configuration = Q4a()
     # configuration = Q5a()
     # configuration = Q5b()
     # configuration = Q5c1()
