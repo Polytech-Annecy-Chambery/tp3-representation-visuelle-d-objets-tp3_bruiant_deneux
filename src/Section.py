@@ -68,13 +68,18 @@ class Section:
                 [3,2,6,7],
                 [4,5,6,7],
                 [0,3,7,4],
-                [1,2,6,7],
+                [1,2,6,5],
                 ]   
 
     # Checks if the opening can be created for the object x
     def canCreateOpening(self, x):
         # A compléter en remplaçant pass par votre code
-        pass      
+        if self.parameters['width'] > x.parameters['width'] and self.parameters['height'] > x.parameters['height'] and\
+            self.parameters['width'] > x.parameters['position'][0] and self.parameters['height'] > x.parameters['position'][1] and\
+                self.parameters['position'][2] == x.parameters['position'][2]:
+            return True
+        else :
+            return False
         
     # Creates the new sections for the object x
     def createNewSections(self, x):
